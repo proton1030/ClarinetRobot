@@ -1,0 +1,20 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+ENTITY split IS
+PORT (clocks,resets: IN STD_LOGIC;
+flips:BUFFER STD_LOGIC);
+END split;
+
+ARCHITECTURE arc OF split IS
+CONSTANT judge:INTEGER:=2000;
+begin
+process (clocks,resets)
+VARIABLE gate:INTEGER:=0;
+begin
+if resets='0' then flips<='0';
+elsif clocks'event and clocks='1' and gate<judge then gate:=gate+1;
+elsif clocks'event and clocks='1' and gate=judge then flips<=not flips;gate:=0;
+elsif clocks'event and clocks='1' and gate>judge then flips<=not flips;gate:=0;
+end if;
+end process;
+end architecture arc;

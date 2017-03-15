@@ -1,0 +1,481 @@
+Analysis & Synthesis report for 1
+Thu Oct 29 10:45:12 2015
+Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |main|noteplay:u3|current_state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 29 10:45:12 2015    ;
+; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Web Edition ;
+; Revision Name                      ; 1                                        ;
+; Top-level Entity Name              ; main                                     ;
+; Family                             ; Cyclone IV E                             ;
+; Total logic elements               ; 219                                      ;
+;     Total combinational functions  ; 217                                      ;
+;     Dedicated logic registers      ; 112                                      ;
+; Total registers                    ; 112                                      ;
+; Total pins                         ; 18                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; main               ; 1                  ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                  ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                     ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------+
+; split.vhd                        ; yes             ; User VHDL File  ; C:/Users/liuha/Desktop/Quartus/test/split.vhd    ;
+; noteplay.vhd                     ; yes             ; User VHDL File  ; C:/Users/liuha/Desktop/Quartus/test/noteplay.vhd ;
+; main.vhd                         ; yes             ; User VHDL File  ; C:/Users/liuha/Desktop/Quartus/test/main.vhd     ;
+; timectrl.vhd                     ; yes             ; User VHDL File  ; C:/Users/liuha/Desktop/Quartus/test/timectrl.vhd ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 219          ;
+;                                             ;              ;
+; Total combinational functions               ; 217          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 101          ;
+;     -- 3 input functions                    ; 16           ;
+;     -- <=2 input functions                  ; 100          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 124          ;
+;     -- arithmetic mode                      ; 93           ;
+;                                             ;              ;
+; Total registers                             ; 112          ;
+;     -- Dedicated logic registers            ; 112          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 18           ;
+; Maximum fan-out node                        ; reset2~input ;
+; Maximum fan-out                             ; 82           ;
+; Total fan-out                               ; 995          ;
+; Average fan-out                             ; 2.73         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |main                      ; 217 (0)           ; 112 (0)      ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |main               ;              ;
+;    |noteplay:u3|           ; 51 (51)           ; 45 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|noteplay:u3   ;              ;
+;    |split:u1|              ; 90 (90)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|split:u1      ;              ;
+;    |timectrl:u2|           ; 76 (76)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|timectrl:u2   ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|noteplay:u3|current_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
++-------------------+------------------+-------------------+------------------+------------------+-------------------+------------------+-------------------+------------------+------------------+-------------------+------------------+-------------------+------------------+-------------------+------------------+------------------+-------------------+------------------+-------------------+------------------+-----------------+------------------+-----------------+------------------+------------------+------------------+-----------------+-----------------+------------------+-----------------+------------------+-----------------+------------------+-------------------+------------------+-------------------+------------------+-------------------+------------------+-----------------+
+; Name              ; current_state.GU ; current_state.FSU ; current_state.FU ; current_state.EU ; current_state.DSU ; current_state.DU ; current_state.CSU ; current_state.CU ; current_state.BH ; current_state.ASH ; current_state.AH ; current_state.GSH ; current_state.GH ; current_state.FSH ; current_state.FH ; current_state.EH ; current_state.DSH ; current_state.DH ; current_state.CSH ; current_state.CH ; current_state.B ; current_state.AS ; current_state.A ; current_state.GS ; current_state.EL ; current_state.FS ; current_state.F ; current_state.E ; current_state.DS ; current_state.D ; current_state.CS ; current_state.C ; current_state.BL ; current_state.ASL ; current_state.AL ; current_state.GSL ; current_state.GL ; current_state.FSL ; current_state.FL ; current_state.G ;
++-------------------+------------------+-------------------+------------------+------------------+-------------------+------------------+-------------------+------------------+------------------+-------------------+------------------+-------------------+------------------+-------------------+------------------+------------------+-------------------+------------------+-------------------+------------------+-----------------+------------------+-----------------+------------------+------------------+------------------+-----------------+-----------------+------------------+-----------------+------------------+-----------------+------------------+-------------------+------------------+-------------------+------------------+-------------------+------------------+-----------------+
+; current_state.G   ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ;
+; current_state.FL  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 1                ; 1               ;
+; current_state.FSL ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1                 ; 0                ; 1               ;
+; current_state.GL  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 1                ; 0                 ; 0                ; 1               ;
+; current_state.GSL ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 1                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.AL  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 1                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.ASL ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 1                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.BL  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 1                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.C   ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 1               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.CS  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 1                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.D   ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 1               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.DS  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 1                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.E   ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 1               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.F   ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 1               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.FS  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 1                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.EL  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 1                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.GS  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 1                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.A   ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 1               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.AS  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 1                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.B   ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.CH  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 1                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.CSH ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 1                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.DH  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 1                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.DSH ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 1                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.EH  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.FH  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 1                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.FSH ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.GH  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 1                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.GSH ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 1                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.AH  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 1                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.ASH ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 1                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.BH  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.CU  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 1                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.CSU ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 1                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.DU  ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 1                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.DSU ; 0                ; 0                 ; 0                ; 0                ; 1                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.EU  ; 0                ; 0                 ; 0                ; 1                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.FU  ; 0                ; 0                 ; 1                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.FSU ; 0                ; 1                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
+; current_state.GU  ; 1                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                ; 0                ; 0               ; 0               ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 0                 ; 0                ; 1               ;
++-------------------+------------------+-------------------+------------------+------------------+-------------------+------------------+-------------------+------------------+------------------+-------------------+------------------+-------------------+------------------+-------------------+------------------+------------------+-------------------+------------------+-------------------+------------------+-----------------+------------------+-----------------+------------------+------------------+------------------+-----------------+-----------------+------------------+-----------------+------------------+-----------------+------------------+-------------------+------------------+-------------------+------------------+-------------------+------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++-----------------------------------------+-----------------------------------------+
+; Register name                           ; Reason for Removal                      ;
++-----------------------------------------+-----------------------------------------+
+; timectrl:u2|timeflag[1..9,11..31]       ; Merged with timectrl:u2|timeflag[10]    ;
+; timectrl:u2|timeflag[10]                ; Stuck at GND due to stuck port data_in  ;
+; timectrl:u2|currentlength[0..31]        ; Lost fanout                             ;
+; noteplay:u3|current_state.C             ; Lost fanout                             ;
+; noteplay:u3|current_state.AH            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.AL            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.AS            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.ASH           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.ASL           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.B             ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.BH            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.BL            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.CH            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.CS            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.CSH           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.CSU           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.CU            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.DH            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.DSH           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.DSU           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.DU            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.EH            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.EL            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.EU            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.FH            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.FL            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.FSH           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.FSL           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.FSU           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.FU            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.GH            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.GL            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.GSH           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.GSL           ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.GU            ; Merged with noteplay:u3|current_state.A ;
+; noteplay:u3|current_state.A             ; Stuck at GND due to stuck port data_in  ;
+; noteplay:u3|finger[0..7,13,15]          ; Stuck at GND due to stuck port data_in  ;
+; Total Number of Removed Registers = 106 ;                                         ;
++-----------------------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                      ;
++------------------------------+---------------------------+-----------------------------------------------------------------------+
+; Register name                ; Reason for Removal        ; Registers Removed due to This Register                                ;
++------------------------------+---------------------------+-----------------------------------------------------------------------+
+; noteplay:u3|current_state.A  ; Stuck at GND              ; noteplay:u3|finger[0], noteplay:u3|finger[1], noteplay:u3|finger[2],  ;
+;                              ; due to stuck port data_in ; noteplay:u3|finger[3], noteplay:u3|finger[4], noteplay:u3|finger[5],  ;
+;                              ;                           ; noteplay:u3|finger[6], noteplay:u3|finger[7], noteplay:u3|finger[13], ;
+;                              ;                           ; noteplay:u3|finger[15]                                                ;
+; timectrl:u2|currentlength[6] ; Lost Fanouts              ; timectrl:u2|currentlength[4], timectrl:u2|currentlength[3],           ;
+;                              ;                           ; timectrl:u2|currentlength[2], timectrl:u2|currentlength[1],           ;
+;                              ;                           ; timectrl:u2|currentlength[0]                                          ;
++------------------------------+---------------------------+-----------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 112   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 41    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 58    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; noteplay:u3|\reg:currentlength[6]      ; 4       ;
+; noteplay:u3|\reg:currentlength[0]      ; 9       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                          ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------+----------------------------+
+; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; |main|timectrl:u2|currentlength[20] ;                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; |main|split:u1|gate[2]              ;                            ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; |main|timectrl:u2|timecnt[19]       ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; |main|timectrl:u2|currentlength[6]  ;                            ;
+; 67:1               ; 40 bits   ; 1760 LEs      ; 880 LEs              ; 880 LEs                ; |main|noteplay:u3|current_state     ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------+----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 11.1 Build 173 11/01/2011 SJ Web Edition
+    Info: Processing started: Thu Oct 29 10:45:06 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 1 -c 1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file split.vhd
+    Info (12022): Found design unit 1: split-arc
+    Info (12023): Found entity 1: split
+Info (12021): Found 2 design units, including 1 entities, in source file noteplay.vhd
+    Info (12022): Found design unit 1: noteplay-main
+    Info (12023): Found entity 1: noteplay
+Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
+    Info (12022): Found design unit 1: main-main2
+    Info (12023): Found entity 1: main
+Info (12021): Found 2 design units, including 1 entities, in source file timectrl.vhd
+    Info (12022): Found design unit 1: timectrl-arca
+    Info (12023): Found entity 1: timectrl
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Info (12128): Elaborating entity "split" for hierarchy "split:u1"
+Info (12128): Elaborating entity "timectrl" for hierarchy "timectrl:u2"
+Info (12128): Elaborating entity "noteplay" for hierarchy "noteplay:u3"
+Info (13005): Duplicate registers merged to single register
+Info (13005): Duplicate registers merged to single register
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "fingerlay[0]" is stuck at GND
+    Warning (13410): Pin "fingerlay[1]" is stuck at GND
+    Warning (13410): Pin "fingerlay[2]" is stuck at GND
+    Warning (13410): Pin "fingerlay[3]" is stuck at GND
+    Warning (13410): Pin "fingerlay[4]" is stuck at GND
+    Warning (13410): Pin "fingerlay[5]" is stuck at GND
+    Warning (13410): Pin "fingerlay[6]" is stuck at GND
+    Warning (13410): Pin "fingerlay[7]" is stuck at GND
+    Warning (13410): Pin "fingerlay[13]" is stuck at GND
+    Warning (13410): Pin "fingerlay[15]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 33 registers lost all their fanouts during netlist optimizations. The first 33 are displayed below.
+    Info (17050): Register "timectrl:u2|currentlength[6]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[5]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[4]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[3]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[2]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[1]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[0]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[7]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[8]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[9]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[11]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[12]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[13]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[14]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[15]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[16]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[17]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[18]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[19]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[20]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[21]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[22]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[23]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[24]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[25]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[26]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[27]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[28]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[29]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[30]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "timectrl:u2|currentlength[31]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "noteplay:u3|current_state.C" lost all its fanouts during netlist optimizations.
+Warning (20013): Ignored assignments for entity "test" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS REPLACE_CONFLICTING -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity test -section_id Top was ignored
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+Info (21057): Implemented 240 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 222 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 346 megabytes
+    Info: Processing ended: Thu Oct 29 10:45:12 2015
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:03
+
+

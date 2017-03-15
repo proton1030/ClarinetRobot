@@ -1,0 +1,83 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+ENTITY noteplay IS
+PORT (clock,reset,button1: IN STD_LOGIC;
+finger: OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
+END noteplay;
+ARCHITECTURE main OF noteplay IS 
+type notes is (EL,FL,FSL,GL,GSL,AL,ASL,BL,C,CS,D,DS,E,F,FS,G,GS,A,AS,B,CH,CSH,DH,DSH,EH,FH,FSH,GH,GSH,AH,ASH,BH,CU,CSU,DU,DSU,EU,FU,FSU,GU);
+signal current_state,next_state:notes;
+
+/* */
+variable currentlength : integer:=1;
+constant notelength : integer:=7;
+variable scoreA : notes(7 downto 0);
+scoreA:="C,D,E,F,G,A,B";
+
+reg:process (reset,clock)
+begin
+if reset = '0' then current_state <=rest; next_state<="G";
+elsif (currentlength<notelength or currentlength=notelength) and clock='1' and clock'event then
+current_state <= scoreA[currentlength])); currentlength:=currentlength+1;
+elsif currentlength>notelength and clock='1' and clock'event then
+current_state <= "G";
+end if;
+case current_state is
+when EL => finger<="0100110101011101";
+when FL => finger<="0100110100011101";
+when FSL =>finger<="0100110100111101";
+when GL => finger<="0100110100011100";
+when GSL =>finger<="0100110100011110";
+when AL => finger<="0100110100011000";
+when ASL =>finger<="0100110100010000";
+when BL => finger<="0100110100001000";
+when C =>finger<="0100110100000000";
+when CS => finger<="0100110110000000";
+when D =>finger<="0100110000000000";
+when DS => finger<="0100111000000000";
+when E =>finger<="0100100000000000";
+when F => finger<="0100000000000000";
+when FS =>finger<="0000100000000000";
+when G => finger<="0000000000000000";
+when GS =>finger<="0001000000000000";
+when A => finger<="0010000000000000";
+when AS =>finger<="1010000000000000";
+when B => finger<="1100110101011101";
+when CH =>finger<="1100110100011101";
+when CSH => finger<="1100110100111101";
+when DH =>finger<="1100110100011100";
+when DSH => finger<="1100110100011110";
+when EH =>finger<="1100110100011000";
+when FH => finger<="1100110100010000";
+when FSH =>finger<="1100110100001000";
+when GH => finger<="1100110100000000";
+when GSH =>finger<="1100110110000000";
+when AH => finger<="1100110000000000";
+when ASH =>finger<="1100111000000000";
+when BH => finger<="1100100000000000";
+when CU =>finger<="1100000000000000";
+when CSU => finger<="";
+when DU =>finger<="";
+when DSU => finger<="";
+when EU =>finger<="";
+when FU => finger<="";
+when FSU =>finger<="";
+when GU => finger<="";
+
+
+
+end case;
+end process;
+
+com:process(current_state)
+begin
+case current_state is
+when  => temp1<=num1;next_state<=s1;
+when s1 => temp1<=num2;next_state<=s2;
+when s2 => temp1<=num3;next_state<=s3;
+when s3 => temp1<=num0;next_state<=s4;
+when s4 => temp1<=num0;next_state<=s5;
+when s5 => temp1<=digit5;next_state<=s5;
+end case;
+end process;
+end architecture main;

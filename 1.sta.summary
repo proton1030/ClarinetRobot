@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock2'
+Slack : -5.467
+TNS   : -171.448
+
+Type  : Slow 1200mV 85C Model Setup 'split:u1|flips'
+Slack : -4.507
+TNS   : -140.093
+
+Type  : Slow 1200mV 85C Model Setup 'timectrl:u2|timeout'
+Slack : -3.971
+TNS   : -104.977
+
+Type  : Slow 1200mV 85C Model Hold 'clock2'
+Slack : -0.023
+TNS   : -0.023
+
+Type  : Slow 1200mV 85C Model Hold 'split:u1|flips'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'timectrl:u2|timeout'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock2'
+Slack : -3.000
+TNS   : -52.071
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'timectrl:u2|timeout'
+Slack : -1.487
+TNS   : -66.915
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'split:u1|flips'
+Slack : -1.487
+TNS   : -50.558
+
+Type  : Slow 1200mV 0C Model Setup 'clock2'
+Slack : -4.975
+TNS   : -156.047
+
+Type  : Slow 1200mV 0C Model Setup 'split:u1|flips'
+Slack : -4.014
+TNS   : -127.009
+
+Type  : Slow 1200mV 0C Model Setup 'timectrl:u2|timeout'
+Slack : -3.391
+TNS   : -90.070
+
+Type  : Slow 1200mV 0C Model Hold 'clock2'
+Slack : 0.032
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'split:u1|flips'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'timectrl:u2|timeout'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock2'
+Slack : -3.000
+TNS   : -52.071
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'timectrl:u2|timeout'
+Slack : -1.487
+TNS   : -66.915
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'split:u1|flips'
+Slack : -1.487
+TNS   : -50.558
+
+Type  : Fast 1200mV 0C Model Setup 'clock2'
+Slack : -1.796
+TNS   : -55.135
+
+Type  : Fast 1200mV 0C Model Setup 'split:u1|flips'
+Slack : -1.497
+TNS   : -41.960
+
+Type  : Fast 1200mV 0C Model Setup 'timectrl:u2|timeout'
+Slack : -1.303
+TNS   : -25.649
+
+Type  : Fast 1200mV 0C Model Hold 'clock2'
+Slack : -0.190
+TNS   : -0.190
+
+Type  : Fast 1200mV 0C Model Hold 'split:u1|flips'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'timectrl:u2|timeout'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock2'
+Slack : -3.000
+TNS   : -38.145
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'timectrl:u2|timeout'
+Slack : -1.000
+TNS   : -45.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'split:u1|flips'
+Slack : -1.000
+TNS   : -34.000
+
+------------------------------------------------------------
