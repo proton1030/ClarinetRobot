@@ -1,7 +1,8 @@
-# clarinet_robot
+# Clarinet Robot
 
 This was a short project/try finished within 1 week.
 
+## Video Link:
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/cwD7twZZ1ns/0.jpg)](http://www.youtube.com/watch?v=cwD7twZZ1ns "Video Title")
 
 The controlling module consists of the VHDL controlling part,  the solenoid valves and the power supply.
